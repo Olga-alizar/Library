@@ -19,7 +19,7 @@ public class JavaToMySQL {
     private static Statement stmt;
     public static ResultSet rs;
     // Коннект к серверу
-    public static void connectToServer() {
+    public void connectToServer() {
         try {
             // открываем коннект к базе данных MySQL server
             con = DriverManager.getConnection(url, user, password);
@@ -29,18 +29,8 @@ public class JavaToMySQL {
             sqlEx.printStackTrace();
         }
     }
-    // Получаем объект для выполнения запроса
-    public static void getStatement() {
-        try {
-            // getting Statement object to execute query
-            stmt = con.createStatement();
-
-        } catch (SQLException sqlEx) {
-            sqlEx.printStackTrace();
-        }
-    }
     // Закрываем подключение к серверу
-    public static void closeconnectToServer() {
+    public void closeconnectToServer() {
         //закрываем всё
         try { con.close(); } catch(SQLException se) { /*can't do anything */ }
         try { stmt.close(); } catch(SQLException se) { /*can't do anything */ }
@@ -48,7 +38,7 @@ public class JavaToMySQL {
     }
 
     // Выролняем запрос или Select или Insert, Update, Delete
-    public static void execQuery(String sQuery, boolean bQuery) {
+    public void execQuery(String sQuery, boolean bQuery) {
         try {
             if (bQuery) {
                 // executing SELECT query
@@ -61,5 +51,4 @@ public class JavaToMySQL {
             sqlEx.printStackTrace();
         }
     }
-
 }

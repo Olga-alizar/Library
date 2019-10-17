@@ -1,9 +1,10 @@
 package package1;
 // Список жанров
 public enum Genre {
-    SCIENCE,
     BELLETRE,
+    NULL,
     PHANTASY,
+    SCIENCE,
     SCIENCE_FICTION,
     Textbook
 }

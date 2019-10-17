@@ -9,10 +9,42 @@ import java.util.Set;
 
 // Класс Автор
 public class Author {
-    public Integer id;
-    public String authorName;
-    public Set<BooKs> books;
-    public Date birthDate;
+    Integer id;
+    String authorName;
+    private Set<Book> books;
+    Date birthDate;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return authorName;
+    }
+
+    public void setName(String name) {
+        this.authorName = name;
+    }
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
 
     // метод добаления автора. Сначала ищем в базе по имени, если не находим, то добавляем
     public void addAuthor(String Name, String birthDat) throws ParseException, SQLException  {
